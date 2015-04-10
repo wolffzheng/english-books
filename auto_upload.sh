@@ -11,13 +11,10 @@ spawn git commit -m "add books"
 spawn git checkout master
 spawn git merge tmp
 spawn git push origin master
-#spawn git push origin master
 expect "*https://github.com*"
-send "$username\r"
-#send "wolffzheng\r"
+send "$1\r"
 expect "*wolffzheng@github.com*"
-send "$password\r"
-#send "Wolff8341\r"
+send "$2\r"
 interact
 spawn git branch -d tmp
 
